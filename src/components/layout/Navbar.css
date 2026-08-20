@@ -1,0 +1,168 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  box-shadow: none;
+  transition: background var(--transition-base), box-shadow var(--transition-base);
+}
+
+/* Transparent state -- sits directly on top of the hero, no bg/shadow */
+.navbar--transparent {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Solid state -- once scrolled (or on any page without a hero) */
+.navbar--solid {
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Because the navbar is `position: fixed`, page content needs top padding
+   equal to its height so nothing sits underneath it. The hero already
+   fills the viewport so this only matters on pages without a hero. */
+main {
+  padding-top: var(--nav-height);
+}
+
+/* The Home page hero is meant to sit directly under the transparent navbar,
+   so cancel that padding only there. */
+.hero {
+  margin-top: calc(var(--nav-height) * -1);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbar__link {
+  font-weight: 600;
+  font-size: 15px;
+  padding: 8px 2px;
+  position: relative;
+  color: var(--color-text-dark);
+  transition: color var(--transition-fast);
+}
+
+.navbar--transparent .navbar__link {
+  color: var(--color-white);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+}
+
+.navbar__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: var(--color-accent-orange);
+  transition: width var(--transition-fast);
+}
+
+.navbar__link:hover::after,
+.navbar__link.active::after {
+  width: 100%;
+}
+
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: none;
+}
+
+.navbar__toggle span {
+  height: 2px;
+  width: 100%;
+  background: var(--color-primary-navy);
+  transition: background var(--transition-fast), transform var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.navbar--transparent .navbar__toggle span {
+  background: var(--color-white);
+}
+
+.navbar__toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar__toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.navbar__toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 860px) {
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__links {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 12px 24px 20px;
+    transform: translateY(-8px);
+    opacity: 50;
+    pointer-events: none;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+  }
+
+  .navbar__links.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Open mobile menu always shows solid links, even over a transparent navbar */
+  .navbar__link {
+    color: var(--color-text-dark) !important;
+    text-shadow: none !important;
+    width: 100%;
+    padding: 12px 4px;
+    border-bottom: 1px solid var(--color-light-cream);
+  }
+
+  .navbar__toggle.is-open span {
+    background: var(--color-primary-navy) !important;
+  }
+}

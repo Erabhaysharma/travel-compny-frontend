@@ -1,0 +1,42 @@
+.modal-loading {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.modal-empty-state {
+  text-align: center;
+  padding: 20px 4px 8px;
+}
+
+.modal-empty-state p {
+  color: var(--color-muted-text);
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+.modal-empty-state__link {
+  border: none;
+  background: none;
+  color: var(--color-accent-orange);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 6px;
+}
+
+.modal-empty-state__link:hover {
+  text-decoration: underline;
+}
+
+.modal-subtext {
+  color: var(--color-muted-text);
+  font-size: 14px;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.modal-form-error {
+  color: #d33;
+  font-size: 13.5px;
+  margin-bottom: 14px;
+}

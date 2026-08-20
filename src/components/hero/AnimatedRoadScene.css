@@ -1,0 +1,160 @@
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--color-primary-navy);
+}
+
+/* --- Scenery crossfade --- */
+.hero-scene__backdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+}
+
+.hero-scene__backdrop.is-active {
+  opacity: 1;
+}
+
+/* Track holds two identical copies of the scene side by side (200% wide)
+   and slides left forever. Because both halves are identical, the point
+   where they meet is invisible -- this is what gives the continuous,
+   seamless right-to-left motion. */
+.hero-scene__pan-track {
+  position: absolute;
+  inset: 0;
+  width: 200%;
+  display: flex;
+  animation: pan-left 26s linear infinite;
+}
+
+.hero-scene__pan-copy {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+@keyframes pan-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.hero-scene__silhouette {
+  position: absolute;
+  bottom: 78px;
+  left: 0;
+  width: 100%;
+  height: 42%;
+}
+
+/* --- Readability scrim over the scenery --- */
+.hero-scene__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 40, 80, 0.15) 0%,
+    rgba(8, 40, 80, 0.35) 55%,
+    rgba(8, 40, 80, 0.75) 100%
+  );
+}
+
+/* --- Road --- */
+.hero-scene__road {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 78px;
+  background: linear-gradient(180deg, #2b3243 0%, #171b26 100%);
+  border-top: 3px solid var(--color-secondary-navy);
+}
+
+.hero-scene__road-lane {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 6px;
+  transform: translateY(-50%);
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-accent-orange) 0px,
+    var(--color-accent-orange) 46px,
+    transparent 46px,
+    transparent 88px
+  );
+  background-size: 176px 6px;
+  animation: road-scroll 1.6s linear infinite;
+}
+
+@keyframes road-scroll {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -176px;
+  }
+}
+
+/* --- Bus --- */
+.hero-scene__bus {
+  position: absolute;
+  left: 50%;
+  bottom: 58px;
+  width: min(280px, 34vw);
+  transform: translateX(-50%);
+  animation: bus-bounce 0.9s ease-in-out infinite;
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.3));
+}
+
+.hero-scene__bus-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@keyframes bus-bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-4px);
+  }
+}
+
+/* Wheel spin -- targets the <g class="bus-wheel"> groups inside the SVG */
+.hero-scene__bus-svg .bus-wheel {
+  animation: wheel-spin 0.6s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes wheel-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-scene__road {
+    height: 56px;
+  }
+
+  .hero-scene__bus {
+    bottom: 40px;
+    width: min(190px, 46vw);
+  }
+
+  .hero-scene__silhouette {
+    bottom: 56px;
+  }
+}

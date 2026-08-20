@@ -1,0 +1,38 @@
+.destinations-page {
+  padding: 56px 0 90px;
+  background: var(--color-off-white);
+  min-height: 60vh;
+}
+
+.destinations-page__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.destinations-page__header h1 {
+  font-size: clamp(28px, 3.4vw, 38px);
+  margin-bottom: 8px;
+}
+
+.destinations-page__header p {
+  color: var(--color-muted-text);
+  font-size: 15px;
+}
+
+.destinations-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 26px;
+}
+
+.destinations-page__state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  color: var(--color-muted-text);
+}

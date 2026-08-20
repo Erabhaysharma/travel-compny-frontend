@@ -1,0 +1,65 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform var(--transition-fast), background var(--transition-fast),
+    border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn--primary {
+  background: var(--color-accent-orange);
+  color: var(--color-white);
+}
+.btn--primary:hover:not(:disabled) {
+  background: var(--color-accent-orange-hover);
+}
+
+.btn--secondary {
+  background: var(--color-primary-navy);
+  color: var(--color-white);
+}
+.btn--secondary:hover:not(:disabled) {
+  background: var(--color-secondary-navy);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-primary-navy);
+}
+.btn--ghost:hover:not(:disabled) {
+  border-color: var(--color-accent-orange);
+  color: var(--color-accent-orange);
+}
+
+/* For CTAs placed over the dark hero scene, where --ghost's navy text
+   wouldn't read well against the scrim. */
+.btn--on-dark {
+  background: var(--color-light-orange);
+  color: var(--color-primary-navy);
+  border-color: var(--color-light-orange);
+}
+.btn--on-dark:hover:not(:disabled) {
+  background: var(--color-white);
+}
+
+.btn--full {
+  width: 100%;
+}

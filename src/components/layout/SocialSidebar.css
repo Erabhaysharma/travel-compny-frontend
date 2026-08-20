@@ -1,0 +1,50 @@
+.social-rail {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 90;
+}
+
+.social-rail__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-orange);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.social-rail__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.social-rail__icon:hover {
+  background: var(--color-accent-orange-hover);
+  transform: translateX(-3px);
+}
+
+@media (max-width: 640px) {
+  .social-rail {
+    right: 10px;
+    gap: 10px;
+  }
+
+  .social-rail__icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .social-rail__icon svg {
+    width: 15px;
+    height: 15px;
+  }
+}

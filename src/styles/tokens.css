@@ -1,0 +1,37 @@
+:root {
+  /* --- Brand palette (client-approved) --- */
+  --color-primary-navy: #082850;
+  --color-secondary-navy: #102f5a;
+  --color-accent-orange: #f07818;
+  --color-light-orange: #fff1e5;
+  --color-off-white: #fffdf9;
+  --color-light-cream: #f7f3ed;
+  --color-text-dark: #172033;
+  --color-muted-text: #667085;
+  --color-border: #e7e9ed;
+  --color-white: #ffffff;
+
+  /* Derived states (kept close to the accent so nothing feels off-brand) */
+  --color-accent-orange-hover: #d9670f;
+  --color-overlay-scrim: rgba(8, 40, 80, 0.55);
+
+  /* --- Type --- */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* --- Layout --- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 2px 8px rgba(8, 40, 80, 0.08);
+  --shadow-md: 0 8px 24px rgba(8, 40, 80, 0.12);
+  --shadow-lg: 0 16px 48px rgba(8, 40, 80, 0.18);
+
+  --container-width: 1200px;
+  --nav-height: 76px;
+
+  --transition-fast: 0.18s ease;
+  --transition-base: 0.28s ease;
+}
