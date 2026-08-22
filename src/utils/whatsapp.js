@@ -1,6 +1,6 @@
 // Your WhatsApp Business number, country code first, digits only (no +, no spaces).
 // e.g. 91 98765 43210 -> "919876543210". Set VITE_WHATSAPP_NUMBER in .env to override.
-const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER; //done
+const WHATSAPP_NUMBER = "918053868654" //done
 
 /**
  * Builds a wa.me click-to-chat link pre-filled with a message about a
