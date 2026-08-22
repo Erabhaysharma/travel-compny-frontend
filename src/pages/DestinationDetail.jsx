@@ -3,6 +3,7 @@ import { useFetch } from "../hooks/useFetch";
 import { exploreApi } from "../api/explore";
 import Spinner from "../components/common/Spinner";
 import Button from "../components/common/Button";
+import GalleryImage from "../components/common/GalleryImage";
 import { useModal } from "../context/ModalContext";
 import "./DestinationDetail.css";
 
@@ -53,7 +54,7 @@ export default function DestinationDetail() {
           <div className="destination-detail__gallery">
             {destination.gallery_images.map((img) => (
               <div className="destination-detail__gallery-item" key={img.id || img.url}>
-                <img src={img.thumbnail_url || img.url} alt={img.name || destination.destination_name} loading="lazy" />
+                <GalleryImage image={img} alt={img.name || destination.destination_name} />
               </div>
             ))}
           </div>

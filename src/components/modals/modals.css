@@ -40,3 +40,42 @@
   font-size: 13.5px;
   margin-bottom: 14px;
 }
+
+.book-seat__trip-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-light-cream);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+
+.book-seat__trip-name {
+  font-weight: 700;
+  color: var(--color-primary-navy);
+  font-size: 15px;
+}
+
+.book-seat__trip-category {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-accent-orange);
+  text-transform: capitalize;
+}
+
+.book-seat__price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-light-orange);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: var(--color-primary-navy);
+}
+
+.book-seat__price-row strong {
+  font-size: 17px;
+}

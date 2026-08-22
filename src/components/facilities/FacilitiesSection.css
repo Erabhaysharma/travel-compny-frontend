@@ -1,0 +1,38 @@
+.facilities {
+  padding: 20px 24px 90px;
+}
+
+.facilities__header {
+  max-width: 640px;
+  margin-bottom: 36px;
+}
+
+.facilities__header h2 {
+  font-size: clamp(28px, 3.6vw, 40px);
+  margin-bottom: 12px;
+}
+
+.facilities__header p {
+  color: var(--color-muted-text);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+.facilities__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 28px;
+}
+
+.facilities__state {
+  text-align: center;
+  color: var(--color-muted-text);
+  padding: 60px 20px;
+  font-size: 15px;
+}
+
+@media (max-width: 700px) {
+  .facilities__grid {
+    grid-template-columns: 1fr;
+  }
+}

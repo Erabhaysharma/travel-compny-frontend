@@ -1,0 +1,36 @@
+.trip-detail__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+}
+
+.trip-detail__meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.trip-detail__tag {
+  background: var(--color-light-cream);
+  color: var(--color-primary-navy);
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  text-transform: capitalize;
+}
+
+.trip-detail__tag--price {
+  background: var(--color-light-orange);
+  color: var(--color-accent-orange-hover);
+}
+
+.trip-detail__desc {
+  color: var(--color-text-dark);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}

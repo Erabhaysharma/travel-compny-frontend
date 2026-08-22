@@ -4,7 +4,7 @@ import BusIllustration from "./BusIllustration";
 import { heroScenes } from "./heroScenes";
 import "./AnimatedRoadScene.css";
 
-const SCENE_DURATION_MS = 101000;
+const SCENE_DURATION_MS = 10000;
 
 export default function AnimatedRoadScene({ scenes = heroScenes }) {
   const [activeIndex, setActiveIndex] = useState(0);

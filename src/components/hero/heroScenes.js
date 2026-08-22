@@ -26,5 +26,41 @@ export const heroScenes = [
     silhouettePath:
       "M0,140 L0,110 L120,40 L220,100 L300,55 L420,115 L520,30 L620,105 L760,50 L880,110 L1000,45 L1120,100 L1280,60 L1280,140 Z",
   },
+   {
+    id: "bodh",
+    image: "/images/hero-scenes/images.jpg",
+    skyFrom: "#a9c9ef",
+    skyTo: "#ffe9d6",
+    silhouetteColor: "#08264d",
+    silhouettePath:
+      "M0,140 L0,110 L120,40 L220,100 L300,55 L420,115 L520,30 L620,105 L760,50 L880,110 L1000,45 L1120,100 L1280,60 L1280,140 Z",
+  },
+  {
+    id: "ganga",
+    image: "/images/hero-scenes/ganga.jpg",
+    skyFrom: "#a9c9ef",
+    skyTo: "#ffe9d6",
+    silhouetteColor: "#08264d",
+    silhouettePath:
+      "M0,140 L0,110 L120,40 L220,100 L300,55 L420,115 L520,30 L620,105 L760,50 L880,110 L1000,45 L1120,100 L1280,60 L1280,140 Z",
+  },
+  {
+    id: "nalanda",
+    image: "/images/hero-scenes/nalanda.jpg",
+    skyFrom: "#a9c9ef",
+    skyTo: "#ffe9d6",
+    silhouetteColor: "#08264d",
+    silhouettePath:
+      "M0,140 L0,110 L120,40 L220,100 L300,55 L420,115 L520,30 L620,105 L760,50 L880,110 L1000,45 L1120,100 L1280,60 L1280,140 Z",
+  },
+  {
+    id: "golghar",
+    image: "/images/hero-scenes/golghar.jpg",
+    skyFrom: "#a9c9ef",
+    skyTo: "#ffe9d6",
+    silhouetteColor: "#08264d",
+    silhouettePath:
+      "M0,140 L0,110 L120,40 L220,100 L300,55 L420,115 L520,30 L620,105 L760,50 L880,110 L1000,45 L1120,100 L1280,60 L1280,140 Z",
+  },
   
 ];

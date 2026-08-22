@@ -1,0 +1,66 @@
+.service-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-card__image {
+  height: 190px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-light-cream);
+}
+
+.service-card__image-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 44px;
+  color: var(--color-secondary-navy);
+}
+
+.service-card__body {
+  padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.service-card__body h3 {
+  font-size: 18px;
+}
+
+.service-card__body p {
+  color: var(--color-muted-text);
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin-bottom: 6px;
+}
+
+.service-card__contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  background: var(--color-accent-orange);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  transition: background var(--transition-fast);
+}
+
+.service-card__contact:hover {
+  background: var(--color-accent-orange-hover);
+}

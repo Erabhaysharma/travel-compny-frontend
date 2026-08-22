@@ -1,0 +1,32 @@
+.services {
+  padding: 20px 24px 90px;
+}
+
+.services__header {
+  max-width: 640px;
+  margin-bottom: 36px;
+}
+
+.services__header h2 {
+  font-size: clamp(28px, 3.6vw, 40px);
+  margin-bottom: 12px;
+}
+
+.services__header p {
+  color: var(--color-muted-text);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 26px;
+}
+
+.services__state {
+  text-align: center;
+  color: var(--color-muted-text);
+  padding: 60px 20px;
+  font-size: 15px;
+}

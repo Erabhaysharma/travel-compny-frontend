@@ -10,10 +10,13 @@ const ModalContext = createContext(null);
 export function ModalProvider({ children }) {
   // activeModal: null | "book-seat" | "notify-me"
   const [activeModal, setActiveModal] = useState(null);
+  // Optional preselected trip when opened from a specific trip card
+  const [bookSeatContext, setBookSeatContext] = useState(null);
   // Optional context passed to Notify Me when opened for a specific trip
   const [notifyContext, setNotifyContext] = useState(null);
 
-  const openBookSeat = useCallback(() => {
+  const openBookSeat = useCallback((tripId = null) => {
+    setBookSeatContext(tripId ? { tripId } : null);
     setActiveModal("book-seat");
   }, []);
 
@@ -25,12 +28,13 @@ export function ModalProvider({ children }) {
 
   const closeModal = useCallback(() => {
     setActiveModal(null);
+    setBookSeatContext(null);
     setNotifyContext(null);
   }, []);
 
   const value = useMemo(
-    () => ({ activeModal, notifyContext, openBookSeat, openNotifyMe, closeModal }),
-    [activeModal, notifyContext, openBookSeat, openNotifyMe, closeModal]
+    () => ({ activeModal, bookSeatContext, notifyContext, openBookSeat, openNotifyMe, closeModal }),
+    [activeModal, bookSeatContext, notifyContext, openBookSeat, openNotifyMe, closeModal]
   );
 
   return <ModalContext.Provider value={value}>{children}</ModalContext.Provider>;

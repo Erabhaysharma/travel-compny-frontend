@@ -1,0 +1,83 @@
+.journeys {
+  padding: 70px 24px 90px;
+  margin-top: 100px;
+}
+
+.journeys__header {
+
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 50px;
+}
+
+.journeys__header h2 {
+  font-size: clamp(28px, 3.6vw, 40px);
+  margin-bottom: 12px;
+}
+
+.journeys__header p {
+  color: var(--color-muted-text);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+.journeys__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.journeys__tab {
+  border: 2px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-primary-navy);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+}
+
+.journeys__tab:hover {
+  border-color: var(--color-accent-orange);
+  color: var(--color-accent-orange);
+}
+
+.journeys__tab.is-active {
+  background: var(--color-accent-orange);
+  border-color: var(--color-accent-orange);
+  color: var(--color-white);
+}
+
+.journeys__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.journeys__previous-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.journeys__state {
+  text-align: center;
+  color: var(--color-muted-text);
+  padding: 60px 20px;
+  font-size: 15px;
+}
+
+@media (max-width: 560px) {
+  .journeys__tabs {
+    gap: 10px;
+  }
+
+  .journeys__tab {
+    flex: 1;
+    padding: 11px 12px;
+    font-size: 13.5px;
+  }
+}

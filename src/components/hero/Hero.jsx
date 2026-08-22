@@ -20,7 +20,7 @@ export default function Hero() {
         </p>
 
         <div className="hero__actions">
-          <Button variant="primary" onClick={openBookSeat}>
+          <Button variant="primary" onClick={() => openBookSeat()}>
             Book Seat
           </Button>
           <Button variant="on-dark" onClick={() => navigate("/destinations")}>
